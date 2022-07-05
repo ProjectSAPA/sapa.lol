@@ -1,0 +1,143 @@
+/* header styles */
+#header{
+	padding: 15px 0;
+	position: relative;
+	z-index: 9;
+	@include media-breakpoint-up(md) {
+		padding: 35px 0;
+	}
+	.container{
+		flex-flow: row nowrap;
+	}
+	.logo{
+		width: 65px;
+		flex-shrink: 0;
+		@include media-breakpoint-up(lg) {
+			width: 98px;
+		}
+		img{
+			display: block;
+			width: 100%;
+			height: auto;
+		}
+	}
+}
+.menu-links{
+	@extend %listreset;
+	display: flex;
+	flex-flow: row wrap;
+	flex-grow: 1;
+	font-size: 16px;
+	line-height: 1.25;
+	justify-content: flex-end;
+	@include media-breakpoint-down(md) {
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		overflow: auto;
+		background:#000105;
+		padding: 15px;
+		display: block;
+		transform: translateX(100%);
+		transition: 0.4s ease;
+	}
+	@include media-breakpoint-up(lg) {
+		font-size: 18px;
+		justify-content: center;
+	}
+	@include media-breakpoint-up(xxl) {
+		font-size: 22px;
+	}
+	li{
+		padding: 10px;
+		@include media-breakpoint-up(md) {
+			margin-left: 15px;
+			padding: 0;
+		}
+		@include media-breakpoint-up(lg) {
+			margin-right: 30px;
+			margin-left: 0;
+		}
+		&.active{
+			a{
+				font-weight: 700;
+			}
+		}
+	}
+	a{
+		color: $white;
+		&:hover{
+			color:$yellow;
+		}
+	}
+}
+
+.nav-opener {
+	position: absolute;
+	top: 20px;
+	right: 10px;
+	width: 30px;
+	height: 40px;
+	z-index: 99;
+}
+
+@include media-breakpoint-up(md) {
+	.nav-opener {
+		display: none;
+	}
+}
+
+.nav-opener:before,
+.nav-opener:after,
+.nav-opener span {
+	background: #fff;
+	border-radius: 2px;
+	position: absolute;
+	top: 50%;
+	left: 5%;
+	right: 5%;
+	height: 4px;
+	margin-top: -2px;
+	-webkit-transition: all 0.2s linear;
+	transition: all 0.2s linear;
+}
+
+.nav-opener:before,
+.nav-opener:after {
+	content: '';
+	top: 30%;
+}
+
+.nav-opener:after {
+	top: 70%;
+}
+
+.nav-active .nav-opener span {
+	opacity: 0;
+}
+
+.nav-active .nav-opener:after,
+.nav-active .nav-opener:before {
+	background: #fff;
+	-webkit-transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
+	transform: rotate(45deg);
+	top: 50%;
+	left: 15%;
+	right: 15%;
+}
+
+.nav-active .nav-opener:after {
+	-webkit-transform: rotate(-45deg);
+	-ms-transform: rotate(-45deg);
+	transform: rotate(-45deg);
+}
+
+.nav-active .nav-opener:hover {
+	opacity: 0.9;
+}
+.nav-active .menu-links{
+	transform: none;
+}

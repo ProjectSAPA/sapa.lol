@@ -1,0 +1,222 @@
+// Typography
+
+/*  ---------------------------------------------------------
+	2. General reset
+	---------------------------------------------------------*/
+
+body {
+	min-width: $base-min-width;
+	-ms-overflow-style: scrollbar;
+	
+	@include media-breakpoint-up(md) {
+		font-size: 16px;
+	}
+	@include media-breakpoint-up(xl) {
+		font-size: 18px;
+	}
+	@include media-breakpoint-up(xxl) {
+		font-size: $font-size-lg;
+		line-height: $line-height-lg;
+	}
+}
+
+a,
+.btn {
+	text-decoration: none;
+	@extend %transition;
+
+	&:focus,
+	&:active {
+		outline: none;
+	}
+}
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+	margin: 0 0 15px;
+	color: $black2; 
+
+	@include media-breakpoint-up(xxl) {
+		margin: 0 0 20px;
+	}
+}
+
+h1, .h1 {
+	font-size: 34px;
+	line-height: 40px;
+
+	@include media-breakpoint-up(sm) {
+		font-size: 45px;
+		line-height: 50px;
+	}
+	@include media-breakpoint-up(lg) {
+		font-size: 55px;
+		line-height: 65px;
+	}
+	@include media-breakpoint-up(xl) {
+		font-size: 70px;
+		line-height: 90px;
+		margin-bottom: 20px;
+	}
+	@include media-breakpoint-up(xxl) {
+		font-size: 90px;
+		line-height: 110px;
+	}
+}
+h2, .h2 {
+	font-size: 30px;
+	line-height: 35px;
+
+	@include media-breakpoint-up(sm) {
+		font-size: 38px;
+		line-height: 45px;
+	}
+	@include media-breakpoint-up(xl) {
+		font-size: 45px;
+		line-height: 55px;
+		margin-bottom: 25px;
+	}
+	@include media-breakpoint-up(xxl) {
+		font-size: 54px;
+		line-height: 68px;
+	}
+}
+h3, .h3 {
+	font-size: 22px;
+	line-height: 26px;
+	margin-bottom: 10px;
+
+	@include media-breakpoint-up(sm) {
+		font-size: 25px;
+		line-height: 32px;
+		margin-bottom: 15px;
+	}
+	@include media-breakpoint-up(xxl) {
+		font-size: 30px;
+		line-height: 36px;
+	}
+}
+
+.small-heading {
+	display: block;
+	font-size: 12px;
+	line-height: 1.5;
+	font-weight: normal;
+	margin: 0 0 15px;
+	
+	@include media-breakpoint-up(md) {
+		font-size: 16px;
+		margin: 0 0 30px;
+	}
+	@include media-breakpoint-up(lg) {
+		margin: 0 0 40px;
+	}
+}
+p {
+	margin-bottom: 1.2em;
+
+	@include media-breakpoint-up(xl) {
+		margin-bottom: 1.8em;
+	}
+
+	&:last-child {
+		margin-bottom: 0 !important;
+	}
+}
+.text-sm-center {
+	@include media-breakpoint-up(sm) {
+		text-align: center !important;
+	}
+}
+.text-sm-left {
+	@include media-breakpoint-up(sm) {
+		text-align: left !important;
+	}
+}
+.text-sm-right {
+	@include media-breakpoint-up(sm) {
+		text-align: right !important;
+	}
+}
+.text-md-center {
+	@include media-breakpoint-up(md) {
+		text-align: center !important;
+	}
+}
+.text-md-left {
+	@include media-breakpoint-up(md) {
+		text-align: left !important;
+	}
+}
+.text-md-right {
+	@include media-breakpoint-up(md) {
+		text-align: right !important;
+	}
+}
+
+.btn {
+	min-width: 150px;
+	padding: 12px 15px;
+	border-radius: 3px;
+	font-size: 14px;
+	
+	@include media-breakpoint-up(md) {
+		font-size: 16px;
+		line-height: 20px;
+	}
+	@include media-breakpoint-up(lg) {
+		font-size: 18px;
+		line-height: 22px;
+		padding: 15px 15px;
+		min-width: 200px;
+	}
+	@include media-breakpoint-up(xl) {
+		padding: 20px 15px;
+		min-width: 270px;
+	}
+
+	&.small {
+		min-width: 180px;
+	}
+
+	&:hover {
+		color: $black2;
+	}
+}
+
+.btn-primary {
+	color: $black2;
+
+	&:hover {
+		color: $white;
+		border-color: $black2;
+		background: $black2;
+	}
+}
+
+.btn-outline-primary {
+	position: relative;
+	color: $black2;
+	overflow: hidden;
+	border: 1px solid $gray-800;
+	background: $white;
+
+	&:hover {
+		color: $white;
+		border-color: $black2;
+		background: $black2;
+	}
+}
+
+.container {
+	padding-right: 15px;
+	padding-left: 15px;
+}
+
+
+/*  ---------------------------------------------------------
+	3. Сommon site styles
+	---------------------------------------------------------*/
+/* main container styles */
+#wrapper {
+	overflow: hidden;
+	position: relative;
+}
